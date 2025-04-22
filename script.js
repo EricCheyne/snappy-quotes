@@ -12,6 +12,19 @@ const quotes = [
   "You are art. You are the vibe."
 ];
 
+const music = document.getElementById("bg-music");
+const toggle = document.getElementById("music-toggle");
+
+toggle.onclick = () => {
+  if (music.paused) {
+    music.play();
+    toggle.textContent = "🔊 Music: On";
+  } else {
+    music.pause();
+    toggle.textContent = "🔇 Music: Off";
+  }
+};
+
 function newQuote() {
   const randomIndex = Math.floor(Math.random() * quotes.length);
   const quoteElement = document.getElementById("quote");
