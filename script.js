@@ -37,3 +37,24 @@ function newQuote() {
     quoteElement.classList.add("fade-in");
   }, 300);
 }
+
+const themeToggle = document.getElementById("theme-toggle");
+
+function applyTheme(theme) {
+  document.body.className = theme;
+  localStorage.setItem("vibe-theme", theme);
+  themeToggle.textContent =
+    theme === "light-mode" ? "🌙 Dark Mode" : "🌞 Light Mode";
+}
+
+// Load saved theme on page load
+const savedTheme = localStorage.getItem("vibe-theme") || "dark-mode";
+applyTheme(savedTheme);
+
+// Toggle on click
+themeToggle.onclick = () => {
+  const currentTheme = document.body.className;
+  const newTheme = currentTheme === "light-mode" ? "dark-mode" : "light-mode";
+  applyTheme(newTheme);
+};
+

@@ -1,4 +1,23 @@
 /* style.css */
+:root {
+  --bg-gradient: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);
+  --text-color: white;
+  --button-bg: rgba(255, 255, 255, 0.2);
+  --container-bg: rgba(255, 255, 255, 0.1);
+}
+
+body.light-mode {
+  --bg-gradient: linear-gradient(135deg, #fceabb 0%, #f8b500 100%);
+  --text-color: #222;
+  --button-bg: rgba(0, 0, 0, 0.1);
+  --container-bg: rgba(255, 255, 255, 0.6);
+}
+
+body {
+  background: var(--bg-gradient);
+  color: var(--text-color);
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -92,3 +111,23 @@ button:hover {
   }
 }
 
+.container {
+  background: var(--container-bg);
+}
+
+button,
+#music-toggle {
+  background: var(--button-bg);
+  color: var(--text-color);
+}
+
+#theme-toggle {
+  margin-bottom: 20px;
+  font-size: 1em;
+  padding: 8px 16px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  transition: background 0.3s;
+}
