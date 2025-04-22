@@ -26,12 +26,14 @@ toggle.onclick = () => {
 };
 
 function newQuote() {
-  const randomIndex = Math.floor(Math.random() * quotes.length);
   const quoteElement = document.getElementById("quote");
-  quoteElement.style.opacity = 0;
+  quoteElement.classList.remove("fade-in");
+  quoteElement.classList.add("fade-out");
+
   setTimeout(() => {
+    const randomIndex = Math.floor(Math.random() * quotes.length);
     quoteElement.textContent = `"${quotes[randomIndex]}"`;
-    quoteElement.style.opacity = 1;
+    quoteElement.classList.remove("fade-out");
+    quoteElement.classList.add("fade-in");
   }, 300);
 }
-
