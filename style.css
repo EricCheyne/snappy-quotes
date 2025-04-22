@@ -14,11 +14,6 @@ body.light-mode {
 }
 
 body {
-  background: var(--bg-gradient);
-  color: var(--text-color);
-}
-
-body {
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', sans-serif;
@@ -26,8 +21,8 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);
-  color: white;
+  background: var(--bg-gradient);
+  color: var(--text-color);
   transition: all 0.5s ease;
 }
 
@@ -37,13 +32,7 @@ body {
   background: var(--container-bg);
   border-radius: 20px;
   backdrop-filter: blur(10px);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
-}
-
-h1 {
-  font-size: 2em;
-  margin-bottom: 20px;
-  transition: all 0.3s ease;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
 h1 {
@@ -65,11 +54,11 @@ h1.fade-in {
 
 button {
   padding: 12px 24px;
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--button-bg);
   border: none;
   border-radius: 15px;
   font-size: 1.1em;
-  color: white;
+  color: var(--text-color);
   cursor: pointer;
   backdrop-filter: blur(5px);
   transition: background 0.3s ease;
@@ -81,12 +70,12 @@ button:hover {
 
 #music-toggle {
   margin-top: 15px;
-  background: rgba(255, 255, 255, 0.15);
+  background: var(--button-bg);
   padding: 8px 20px;
   border-radius: 10px;
   font-size: 0.95em;
   border: none;
-  color: white;
+  color: var(--text-color);
   cursor: pointer;
   backdrop-filter: blur(3px);
 }
@@ -109,16 +98,6 @@ button:hover {
   #music-toggle {
     font-size: 0.9em;
   }
-}
-
-.container {
-  background: var(--container-bg);
-}
-
-button,
-#music-toggle {
-  background: var(--button-bg);
-  color: var(--text-color);
 }
 
 #theme-toggle {

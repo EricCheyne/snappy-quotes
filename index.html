@@ -2,19 +2,27 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vibe Quotes ✨</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
-    <button id="theme-toggle">🌙 Dark Mode</button>
-    <h1 id="quote">"You are a vibe."</h1>
-    <button onclick="newQuote()">✨ New Vibe ✨</button>
+    <!-- Theme toggle button -->
+    <button id="theme-toggle" aria-label="Toggle theme">🌙 Dark Mode</button>
+
+    <!-- Quote display -->
+    <h1 id="quote" aria-live="polite">"You are a vibe."</h1>
+
+    <!-- New quote button -->
+    <button id="new-quote" onclick="newQuote()" aria-label="Generate a new quote">✨ New Vibe ✨</button>
   </div>
-  <script src="script.js"></script>
+
+  <!-- Background music -->
   <audio id="bg-music" src="inspiring-motivation-music-250532.mp3" loop autoplay></audio>
-  <button id="music-toggle">🔊 Music: On</button>
+  <button id="music-toggle" aria-label="Toggle music">🔊 Music: On</button>
+
+  <script src="script.js"></script>
 </body>
 </html>
 

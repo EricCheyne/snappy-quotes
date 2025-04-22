@@ -14,7 +14,10 @@ const quotes = [
 
 const music = document.getElementById("bg-music");
 const toggle = document.getElementById("music-toggle");
+const quoteElement = document.getElementById("quote");
+const themeToggle = document.getElementById("theme-toggle");
 
+// Toggle music playback
 toggle.onclick = () => {
   if (music.paused) {
     music.play();
@@ -25,8 +28,9 @@ toggle.onclick = () => {
   }
 };
 
+// Display a new quote with fade-in and fade-out animations
 function newQuote() {
-  const quoteElement = document.getElementById("quote");
+  if (!quoteElement) return; // Ensure the element exists
   quoteElement.classList.remove("fade-in");
   quoteElement.classList.add("fade-out");
 
@@ -38,8 +42,7 @@ function newQuote() {
   }, 300);
 }
 
-const themeToggle = document.getElementById("theme-toggle");
-
+// Apply the selected theme
 function applyTheme(theme) {
   document.body.className = theme;
   localStorage.setItem("vibe-theme", theme);
@@ -47,11 +50,11 @@ function applyTheme(theme) {
     theme === "light-mode" ? "🌙 Dark Mode" : "🌞 Light Mode";
 }
 
-// Load saved theme on page load
+// Load the saved theme on page load
 const savedTheme = localStorage.getItem("vibe-theme") || "dark-mode";
 applyTheme(savedTheme);
 
-// Toggle on click
+// Toggle theme on click
 themeToggle.onclick = () => {
   const currentTheme = document.body.className;
   const newTheme = currentTheme === "light-mode" ? "dark-mode" : "light-mode";
